@@ -48,6 +48,11 @@ class SpeedA extends Cheat{
         if($player->isFlying() || $player->getAllowFlight()){
             return;
         }
+      
+        // TODO: Check Riptide enchantment
+        if($player->getInventory()->getItemInHand() == ItemIds::TRIDENT) {
+            return; 
+        }
 
         if($event->getMode() === MoveEvent::MODE_NORMAL){
             $distance = $event->getDistanceXZ();
